@@ -260,9 +260,10 @@ namespace Work_Pal
                 data.setTime(new TimeSpan(reader.GetInt64(3) * TicksPerMillisecond));
 
                 graphData.Add(data);
-            }    
-            
+            }
+
             chart.Series.Clear();
+            chart.ResetAutoValues();
 
             Series series = new Series("Data");
 
@@ -277,8 +278,8 @@ namespace Work_Pal
 
                 x++;
             }
-
             chart.Series.Add(series);
+            chart.Update();
 
             connection.Close();
         }
@@ -312,8 +313,31 @@ namespace Work_Pal
 
         private void btnWork_Click(object sender, EventArgs e)
         {
+            if (timeTimer.Enabled)
+            {
+                btnWork.Text = "Start Work";
+                work_end();
+            }
+            else
+            {
+                btnWork.Text = "Finish Work";
+                work_start();
+            }
+        }
+
+        private void work_start()
+        {
             stopwatch.Start();
             timeTimer.Enabled = true;
+        }
+
+        private void work_end()
+        {
+            stopwatch.Stop();
+            timeTimer.Enabled = false;
+            finshUp();
+
+            checkGraph();
         }
 
         private void timeTimer_Tick(object sender, EventArgs e)
@@ -323,15 +347,6 @@ namespace Work_Pal
             time.Text = getTimeString(currentTime + dayTime);
             timeWeek.Text = getTimeString(currentTime + weekTime);
             timeCurrent.Text = getTimeString(currentTime);
-        }
-
-        private void btnFinishWork_Click(object sender, EventArgs e)
-        {
-            stopwatch.Stop();
-            timeTimer.Enabled = false;
-            finshUp();
-
-            checkGraph();
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)

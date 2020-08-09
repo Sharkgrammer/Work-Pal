@@ -33,10 +33,8 @@
             this.date = new System.Windows.Forms.Label();
             this.time = new System.Windows.Forms.Label();
             this.timeTimer = new System.Windows.Forms.Timer(this.components);
-            this.btnBreak = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnFinishWork = new System.Windows.Forms.Button();
             this.btnWork = new System.Windows.Forms.Button();
             this.timeWeek = new System.Windows.Forms.Label();
             this.timeCurrent = new System.Windows.Forms.Label();
@@ -77,22 +75,6 @@
             // 
             this.timeTimer.Tick += new System.EventHandler(this.timeTimer_Tick);
             // 
-            // btnBreak
-            // 
-            this.btnBreak.BackColor = System.Drawing.Color.Teal;
-            this.btnBreak.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnBreak.FlatAppearance.BorderSize = 2;
-            this.btnBreak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBreak.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnBreak.ForeColor = System.Drawing.Color.White;
-            this.btnBreak.Location = new System.Drawing.Point(155, 10);
-            this.btnBreak.Name = "btnBreak";
-            this.btnBreak.Size = new System.Drawing.Size(100, 30);
-            this.btnBreak.TabIndex = 4;
-            this.btnBreak.Text = "Break";
-            this.btnBreak.UseVisualStyleBackColor = false;
-            this.btnBreak.Visible = false;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
@@ -105,29 +87,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Teal;
-            this.panel2.Controls.Add(this.btnFinishWork);
             this.panel2.Controls.Add(this.btnWork);
-            this.panel2.Controls.Add(this.btnBreak);
             this.panel2.Location = new System.Drawing.Point(0, 312);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(400, 60);
             this.panel2.TabIndex = 8;
-            // 
-            // btnFinishWork
-            // 
-            this.btnFinishWork.BackColor = System.Drawing.Color.Teal;
-            this.btnFinishWork.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnFinishWork.FlatAppearance.BorderSize = 2;
-            this.btnFinishWork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinishWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnFinishWork.ForeColor = System.Drawing.Color.White;
-            this.btnFinishWork.Location = new System.Drawing.Point(290, 10);
-            this.btnFinishWork.Name = "btnFinishWork";
-            this.btnFinishWork.Size = new System.Drawing.Size(100, 30);
-            this.btnFinishWork.TabIndex = 6;
-            this.btnFinishWork.Text = "End Work";
-            this.btnFinishWork.UseVisualStyleBackColor = false;
-            this.btnFinishWork.Click += new System.EventHandler(this.btnFinishWork_Click);
             // 
             // btnWork
             // 
@@ -137,9 +101,9 @@
             this.btnWork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnWork.ForeColor = System.Drawing.Color.White;
-            this.btnWork.Location = new System.Drawing.Point(10, 10);
+            this.btnWork.Location = new System.Drawing.Point(125, 10);
             this.btnWork.Name = "btnWork";
-            this.btnWork.Size = new System.Drawing.Size(100, 30);
+            this.btnWork.Size = new System.Drawing.Size(150, 30);
             this.btnWork.TabIndex = 5;
             this.btnWork.Text = "Start Work";
             this.btnWork.UseVisualStyleBackColor = false;
@@ -237,10 +201,8 @@
         private System.Windows.Forms.Label date;
         private System.Windows.Forms.Label time;
         private System.Windows.Forms.Timer timeTimer;
-        private System.Windows.Forms.Button btnBreak;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnFinishWork;
         private System.Windows.Forms.Button btnWork;
         private System.Windows.Forms.Label timeWeek;
         private System.Windows.Forms.Label timeCurrent;
